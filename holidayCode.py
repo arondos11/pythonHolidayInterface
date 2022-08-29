@@ -153,18 +153,7 @@ def viewHoliday(yearUser, weekNumUser):
     print(*viewHolidayList, sep = "\n")
     return viewHolidayList      
 
-def viewCurrentWeek():
-    todayDate = date.today()
-    myDate = todayDate.isocalendar()
-    weather = requests.get(apiLink).json()
-    print(weather)
-    
-    weatherList = []
-    for i in weather:
-        maximumTemperature = i("temperature_2m")
-        weatherList.append(maximumTemperature)
-    print(weatherList)
-    viewHoliday(str(myDate.year), str(myDate.week))
+
  
     
 
